@@ -8,16 +8,10 @@ import grpc.server.proto.ReactorMyServiceGrpc.MyServiceImplBase;
 import io.grpc.StatusException;
 import io.grpc.protobuf.StatusProto;
 import net.devh.boot.grpc.server.service.GrpcService;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @GrpcService(interceptors = {LogInterceptor.class})
 public class MyServiceImpl extends MyServiceImplBase {
-
-    @Override
-    public Flux<HelloWorldReply> streamSayHelloStream(Flux<HelloWorldRequest> request) {
-        return request.map(this::response);
-    }
 
     @Override
     public Mono<HelloWorldReply> sayHello(HelloWorldRequest request) {

@@ -5,7 +5,6 @@ option java_package = "grpc.server.proto";
 
 service MyService {
   rpc SayHello (HelloWorldRequest) returns (HelloWorldReply) {}
-  rpc StreamSayHelloStream (stream HelloWorldRequest) returns (stream HelloWorldReply) {}
 }
 
 message HelloWorldRequest {
