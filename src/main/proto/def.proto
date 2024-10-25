@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "grpc.server.proto";
+
+service MyService {
+  rpc SayHello (HelloWorldRequest) returns (HelloWorldReply) {}
+  rpc StreamSayHelloStream (stream HelloWorldRequest) returns (stream HelloWorldReply) {}
+}
+
+message HelloWorldRequest {
+  string name = 1;
+}
+
+message HelloWorldReply {
+  string message = 1;
+}
