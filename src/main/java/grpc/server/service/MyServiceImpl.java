@@ -11,7 +11,7 @@ import net.devh.boot.grpc.server.service.GrpcService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-@GrpcService
+@GrpcService(interceptors = {LogInterceptor.class})
 public class MyServiceImpl extends MyServiceImplBase {
 
     @Override
